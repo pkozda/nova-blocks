@@ -28,3 +28,6 @@ yarn-error.log*
 coverage/
 *.tmp
 *.temp
+
+*storybook.log
+storybook-static
