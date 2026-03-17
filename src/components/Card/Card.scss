@@ -1,0 +1,22 @@
+.nb-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+
+    &__header {
+        padding: 1rem;
+        border-bottom: 1px solid #e5e7eb;
+        font-weight: 600;
+    }
+
+    &__body {
+        padding: 1rem;
+    }
+
+    &__footer {
+        padding: 1rem;
+        border-top: 1px solid #e5e7eb;
+        text-align: right;
+    }
+}
