@@ -74,3 +74,26 @@ npm run generate Input
 - Export file
 
 All files follow Nova Blocks conventions.
+
+## 🌗 Theming
+
+Nova Blocks supports light and dark themes using CSS variables.
+
+### Usage
+
+```ts
+import { setTheme } from 'nova-blocks'
+
+setTheme('light') // or 'dark'
+```
+
+## HTML approach
+```html
+<html data-theme="light">
+```
+
+### Notes
+
+- Dark theme is default
+- Theme switching is instant (no re-render)
+- Components automatically adapt via CSS variables

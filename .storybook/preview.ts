@@ -1,5 +1,25 @@
 import type { Preview } from '@storybook/vue3-vite'
 import '../src/styles/base.scss'
+import { setTheme } from '../src/utils/theme'
+
+export const globalTypes = {
+  theme: {
+      name: 'Theme',
+      description: 'Global theme',
+      defaultValue: 'dark',
+      toolbar: {
+          icon: 'mirror',
+          items: ['light', 'dark']
+      }
+  }
+}
+
+export const decorators = [
+  (story, context) => {
+      setTheme(context.globals.theme)
+      return story()
+  }
+]
 
 const preview: Preview = {
   parameters: {

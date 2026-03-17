@@ -6,4 +6,7 @@ body {
     background: var(--nb-bg);
     color: var(--nb-text-primary);
     font-family: Inter, system-ui, sans-serif;
+
+    transition: background 0.25s ease, color 0.25s ease;
 }
+
