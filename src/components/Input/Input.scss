@@ -1,0 +1,37 @@
+@import '../../styles/mixins';
+
+.nb-input {
+    border-radius: var(--nb-radius);
+    border: 1px solid var(--nb-border);
+
+    @include nb-surface;
+
+    transition: var(--nb-transition-base);
+
+    &__field {
+        width: 100%;
+        padding: 0.6rem 0.75rem;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: var(--nb-text-primary);
+        font-size: 14px;
+
+        &::placeholder {
+            color: var(--nb-text-secondary);
+        }
+    }
+
+    &:focus-within {
+        border-color: rgba(99, 102, 241, 0.4);
+        @include nb-glow-idle;
+    }
+
+    &--error {
+        border-color: #ef4444;
+
+        &:focus-within {
+            box-shadow: 0 0 0 1px #ef4444;
+        }
+    }
+}
