@@ -1,4 +1,5 @@
 :root {
+    /* fallback (dark по умолчанию) */
     --nb-bg: #0b1220;
     --nb-surface: #0f172a;
     --nb-surface-2: #111827;
@@ -12,12 +13,26 @@
 
     --nb-text-primary: #e5e7eb;
     --nb-text-secondary: #94a3b8;
+}
 
-    --nb-glow-soft: 0 0 12px rgba(99, 102, 241, 0.25);
-    --nb-glow-hover: 0 0 24px rgba(34, 211, 238, 0.35);
+[data-theme='dark'] {
+    --nb-bg: #0b1220;
+    --nb-surface: #0f172a;
+    --nb-surface-2: #111827;
 
-    --nb-radius: 10px;
+    --nb-border: rgba(255, 255, 255, 0.08);
 
-    --nb-transition-fast: 0.2s ease;
-    --nb-transition-base: 0.25s ease;
+    --nb-text-primary: #e5e7eb;
+    --nb-text-secondary: #94a3b8;
+}
+
+[data-theme='light'] {
+    --nb-bg: #f8fafc;
+    --nb-surface: #ffffff;
+    --nb-surface-2: #f1f5f9;
+
+    --nb-border: rgba(0, 0, 0, 0.08);
+
+    --nb-text-primary: #0f172a;
+    --nb-text-secondary: #475569;
 }
