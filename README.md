@@ -50,3 +50,27 @@ Global styles are automatically included when importing the library:
 ```ts
 import 'nova-blocks/dist/styles.css'
 ```
+
+## ⚙️ Component Generator
+
+Create new components using the CLI generator:
+
+```bash
+npm run generate ComponentName
+````
+
+Example:
+
+```bash
+npm run generate Input
+```
+
+### This will generate:
+
+- Vue component
+- SCSS styles
+- Unit test
+- Storybook story
+- Export file
+
+All files follow Nova Blocks conventions.
