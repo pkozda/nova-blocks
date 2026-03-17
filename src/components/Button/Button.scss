@@ -1,13 +1,22 @@
-.btn {
-    padding: 0.5rem 1rem;
+@import '../../styles/mixins';
+
+.nb-button {
+    padding: 0.55rem 1.1rem;
+    border-radius: var(--nb-radius);
     border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
     cursor: pointer;
-    font-size: 1rem;
+    color: white;
+
+    @include nb-gradient;
+
+    transition: var(--nb-transition-base);
 
     &:hover {
-        background-color: #0056b3;
+        transform: translateY(-1px);
+        @include nb-glow-hover;
+    }
+
+    &:active {
+        transform: translateY(0);
     }
 }

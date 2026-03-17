@@ -1,0 +1,24 @@
+@mixin nb-gradient {
+    background: linear-gradient(
+        135deg,
+        var(--nb-primary-start),
+        var(--nb-primary-end)
+    );
+}
+
+@mixin nb-glow-idle {
+    box-shadow: var(--nb-glow-soft);
+}
+
+@mixin nb-glow-hover {
+    box-shadow: var(--nb-glow-hover);
+}
+
+@mixin nb-surface {
+    background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.01)
+    );
+    backdrop-filter: blur(6px);
+}
