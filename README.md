@@ -38,3 +38,15 @@ Nova Blocks follows a **Soft Futurism (Level 5)** design approach:
 - Focus on clarity + modern aesthetics
 
 ### Styling Architecture
+src/styles/
+tokens.scss # design tokens (colors, spacing, effects)
+mixins.scss # reusable style logic
+base.scss # global styles
+
+### Usage
+
+Global styles are automatically included when importing the library:
+
+```ts
+import 'nova-blocks/dist/styles.css'
+```
