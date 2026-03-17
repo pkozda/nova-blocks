@@ -20,4 +20,33 @@ Nova Blocks is a Vue 3 UI component library with SCSS support, Storybook documen
 3. **Pull Requests**
    - The pull request title should match the task name (potentially including a Jira or task manager ID).
    - Provide a short description of the task in the pull request body.
-   
+
+## 🎨 Design System
+
+Nova Blocks follows a **Soft Futurism (Level 5)** design approach:
+
+- Clean, minimal base UI
+- Subtle gradients for primary actions
+- Glow effects only on interaction (hover / focus)
+- Glass / depth surfaces for layout components
+
+### Principles
+
+- One visual accent per component
+- No aggressive neon or constant animations
+- Effects are triggered, not persistent
+- Focus on clarity + modern aesthetics
+
+### Styling Architecture
+src/styles/
+tokens.scss # design tokens (colors, spacing, effects)
+mixins.scss # reusable style logic
+base.scss # global styles
+
+### Usage
+
+Global styles are automatically included when importing the library:
+
+```ts
+import 'nova-blocks/dist/styles.css'
+```

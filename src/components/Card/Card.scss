@@ -1,22 +1,14 @@
+@import '../../styles/mixins';
+
 .nb-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    background: #ffffff;
-    overflow: hidden;
+    border-radius: var(--nb-radius);
+    border: 1px solid var(--nb-border);
 
-    &__header {
-        padding: 1rem;
-        border-bottom: 1px solid #e5e7eb;
-        font-weight: 600;
-    }
+    @include nb-surface;
 
-    &__body {
-        padding: 1rem;
-    }
+    transition: var(--nb-transition-base);
 
-    &__footer {
-        padding: 1rem;
-        border-top: 1px solid #e5e7eb;
-        text-align: right;
+    &:hover {
+        border-color: rgba(99, 102, 241, 0.3);
     }
 }
