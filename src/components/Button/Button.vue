@@ -1,13 +1,19 @@
 <template>
     <button
-      class="nb-button"
-      :class="[
-        `nb-button--${variant}`,
-        { 'nb-button--disabled': disabled },
-      ]"
-      :disabled="disabled"
+        class="nb-button"
+        :class="[
+            `nb-button--${size}`,
+            `nb-button--${variant}`,
+            { 'nb-button--disabled': disabled },
+            { 'nb-button--loading': loading },
+            ]"
+        :disabled="disabled || loading"
     >
-        <slot />
+        <span v-if="loading">
+            <slot />
+            <span class="nb-button__spinner" />
+        </span>
+        <span v-else><slot /></span>
     </button>
 </template>
   
@@ -20,6 +26,14 @@ export default defineComponent({
         variant: {
             type: String,
             default: 'primary'
+        },
+        size: {
+            type: String,
+            default: 'medium'
+        },
+        loading: {
+            type: Boolean,
+            default: false
         },
         disabled: {
             type: Boolean,
