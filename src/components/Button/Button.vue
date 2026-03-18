@@ -1,16 +1,29 @@
 <template>
-    <button class="nb-button">
-      <slot>Button</slot>
+    <button
+      class="nb-button"
+      :class="`nb-button--${variant}`"
+      :disabled="disabled"
+    >
+        <slot />
     </button>
-  </template>
+</template>
   
-  <script lang="ts">
-  import { defineComponent } from 'vue'
+<script lang="ts">
+import { defineComponent } from 'vue'
   
-  export default defineComponent({
-    name: 'Button'
-  })
-  </script>
+export default defineComponent({
+    name: 'Button',
+    props: {
+        variant: {
+            type: String,
+            default: 'primary'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        }
+    }
+})
+</script>
   
-  <style lang="scss" src="./Button.scss"></style>
-  
+<style lang="scss" src="./Button.scss"></style>
