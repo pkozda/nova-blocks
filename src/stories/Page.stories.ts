@@ -22,9 +22,13 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+type PlayContext = {
+  canvasElement: HTMLElement;
+};
+
 // More on component testing: https://storybook.js.org/docs/writing-tests/interaction-testing
 export const LoggedIn: Story = {
-  play: async ({ canvasElement }: any) => {
+  play: async ({ canvasElement }: PlayContext) => {
     const canvas = within(canvasElement);
     const loginButton = canvas.getByRole('button', { name: /Log in/i });
     await expect(loginButton).toBeInTheDocument();

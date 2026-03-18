@@ -1,8 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
 
-import { fn } from 'storybook/test';
-
 import MyHeader from './Header.vue';
+
+type HeaderArgs = {
+  user?: { name: string } | null;
+};
 
 const meta = {
   /* 👇 The title prop is optional.
@@ -11,7 +13,7 @@ const meta = {
    */
   title: 'Example/Header',
   component: MyHeader,
-  render: (args: any) => ({
+  render: (args: HeaderArgs) => ({
     components: { MyHeader },
     setup() {
       return { args };
@@ -22,11 +24,7 @@ const meta = {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
     layout: 'fullscreen',
   },
-  args: {
-    onLogin: fn(),
-    onLogout: fn(),
-    onCreateAccount: fn(),
-  },
+  args: {} satisfies HeaderArgs,
   // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
 } satisfies Meta<typeof MyHeader>;

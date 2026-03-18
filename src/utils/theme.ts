@@ -3,7 +3,8 @@ export const setTheme = (theme: 'light' | 'dark') => {
 }
 
 export const getTheme = (): 'light' | 'dark' => {
-    return (document.documentElement.getAttribute('data-theme') as any) || 'dark'
+    const theme = document.documentElement.getAttribute('data-theme')
+    return theme === 'light' || theme === 'dark' ? theme : 'dark'
 }
 
 export const toggleTheme = () => {
