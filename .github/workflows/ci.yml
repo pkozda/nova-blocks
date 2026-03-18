@@ -34,4 +34,4 @@ jobs:
         run: npm run test
 
       - name: Build library
-        run: npx rollup -c
+        run: npx rollup -c rollup.config.cjs
