@@ -3,20 +3,50 @@
 .nb-button {
     padding: 0.55rem 1.1rem;
     border-radius: var(--nb-radius);
-    border: none;
     cursor: pointer;
-    color: white;
-
-    @include nb-gradient;
+    font-weight: 500;
+    border: 1px solid transparent;
 
     transition: var(--nb-transition-base);
 
-    &:hover {
-        transform: translateY(-1px);
-        @include nb-glow-hover;
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
     }
 
-    &:active {
-        transform: translateY(0);
+    /* ===== PRIMARY ===== */
+    &--primary {
+        color: white;
+
+        @include nb-gradient;
+
+        &:hover:not(:disabled) {
+            transform: translateY(-1px);
+            @include nb-glow-hover;
+        }
+    }
+
+    /* ===== SECONDARY ===== */
+    &--secondary {
+        color: var(--nb-text-primary);
+        border: 1px solid var(--nb-border);
+
+        @include nb-surface;
+
+        &:hover:not(:disabled) {
+            border-color: rgba(99, 102, 241, 0.4);
+            transform: translateY(-1px);
+        }
+    }
+
+    /* ===== GHOST ===== */
+    &--ghost {
+        background: transparent;
+        color: var(--nb-text-secondary);
+
+        &:hover:not(:disabled) {
+            color: var(--nb-text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
     }
 }
