@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@use '../../styles/mixins' as *;
 
 .nb-button {
     padding: 0.55rem 1.1rem;
@@ -49,4 +49,41 @@
             background: rgba(255, 255, 255, 0.05);
         }
     }
+
+    /* Sizes */
+    &--small {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.7rem;
+        height: 2rem;
+    }
+
+    &--medium {
+        font-size: 0.875rem;
+        padding: 0.55rem 1.1rem;
+        height: 2.5rem;
+    }
+
+    &--large {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        height: 3rem;
+    }
+
+    /* Spinner */
+    &__spinner {
+        display: inline-block;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        width: 1em;
+        height: 1em;
+        border: 2px solid var(--nb-text-secondary);
+        border-top-color: var(--nb-text-primary);
+        border-radius: 50%;
+        display: inline-block;
+        animation: nb-spin 0.75s linear infinite;
+    }
+}
+
+@keyframes nb-spin {
+    to { transform: rotate(360deg); }
 }

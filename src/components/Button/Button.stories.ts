@@ -22,3 +22,16 @@ export const Disabled = () => ({
         <Button variant="primary" disabled>Disabled</Button>
     `
 })
+
+export const SizesAndLoading = () => ({
+    components: { Button },
+    template: `
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <Button size="small">Small</Button>
+            <Button size="medium">Medium</Button>
+            <Button size="large">Large</Button>
+            <Button loading>Loading</Button>
+            <Button variant="secondary" size="large" loading>Secondary Loading</Button>
+        </div>
+    `
+})
