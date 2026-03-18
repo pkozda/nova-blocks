@@ -34,3 +34,13 @@ export const Disabled = () => ({
         <Input v-model="value" disabled />
     `
 })
+
+export const Types = () => ({
+    components: { Input },
+    data() {
+        return { value: '' }
+    },
+    template: `
+        <Input v-model="value" type="email" placeholder="Email" />
+    `
+})

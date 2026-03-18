@@ -1,14 +1,17 @@
 <template>
-  <div class="nb-input" :class="{ 'nb-input--error': error }">
-    <input
-      class="nb-input__field"
+  <input
+      class="nb-input"
+      :class="{
+          'nb-input--error': error,
+          'nb-input--disabled': disabled,
+          [`nb-input--${type}`]: !!type,
+      }"
       :value="modelValue"
       :placeholder="placeholder"
       :disabled="disabled"
       :type="type"
       @input="onInput"
-    />
-  </div>
+  />
 </template>
 
 <script lang="ts">
@@ -41,7 +44,8 @@ export default defineComponent({
   emits: ['update:modelValue'],
   setup(_, { emit }) {
     const onInput = (e: Event) => {
-      const target = e.target as HTMLInputElement
+      const target = e.target as HTMLInputElement | null
+      if (!target) return
       emit('update:modelValue', target.value)
     }
 
