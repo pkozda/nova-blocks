@@ -1,7 +1,10 @@
 <template>
     <button
       class="nb-button"
-      :class="`nb-button--${variant}`"
+      :class="[
+        `nb-button--${variant}`,
+        { 'nb-button--disabled': disabled },
+      ]"
       :disabled="disabled"
     >
         <slot />
