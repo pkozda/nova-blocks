@@ -6,7 +6,8 @@
   "module": "dist/index.mjs",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest run -c vitest.unit.config.ts",
+    "test:storybook": "vitest run -c vitest.config.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build": "rollup -c --bundleConfigAsCjs",
@@ -56,7 +57,7 @@
   },
   "lint-staged": {
     "*.{ts,vue}": [
-      "vitest related --run"
+      "vitest related --run -c vitest.unit.config.ts"
     ]
   }
 }
